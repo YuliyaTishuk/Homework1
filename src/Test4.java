@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//Перемножение цифр  числа между собой
 public class Test4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -9,7 +9,7 @@ public class Test4 {
         System.out.println("Result = " + result);
     }
 
-    public static int result(int number) {
+    private static int result(int number) {
         if (number > 10) {
             int remainder = number / 10;
             int digit = number % 10;

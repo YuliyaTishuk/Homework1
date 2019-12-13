@@ -2,11 +2,11 @@ import java.util.Arrays;
 
 public class Shaker {
     public static void main(String[] args) {
-        //int[] array = new int[]{1, -4, 2, 88, 95481, -59, 0};
-        int[] array = new int[args.length];
-        for (int i = 0; i < args.length; i++) {
-            array[i] = Integer.parseInt(args[i]);
-        }
+        int[] array = new int[]{1, -4, 2, 88, 95481, -59, 0};
+//        int[] array = new int[args.length];
+//        for (int i = 0; i < args.length; i++) {
+//            array[i] = Integer.parseInt(args[i]);//parseInt Метод, преобразует строку в число
+//        }
 
         // int[] array = Arrays.stream(args).mapToInt(Integer::parseInt).toArray();
 

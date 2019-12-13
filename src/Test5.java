@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test5 {
-    public static int[] quickSort(int [] array, int start, int end) {
+    private static int[] quickSort(int[] array, int start, int end) {
         if (start >= end) return array;
         int i = start;
         int j = end;
@@ -40,7 +40,7 @@ public class Test5 {
             System.out.print("Введите " + i + " -ое число ");
             array[i] = scanner.nextInt();
         }
-        array = Arrays.stream(array).distinct().toArray();
+        array = Arrays.stream(array).distinct().toArray();//distinct().Метод, возвращает метод без дубликатов
 
         quickSort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));

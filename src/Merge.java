@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class Merge {
 
-    public static int[] a = {19, 7, 6, 15, 2, 6, 2, 4, 8, 16};
+    public static int[] array = {19, 7, 6, 15, 2, 6, 2, 4, 8, 16};
 
-    public static void merge(int begin, int end) {
+    private static void merge(int begin, int end) {
         int mid = (begin + end) / 2;
 
         int[] t = new int[end - begin + 1];
@@ -17,28 +17,28 @@ public class Merge {
 
         while ((index_1 <= mid) || (index_2 <= end)) {
             if (index_1 > mid) {
-                t[index_t++] = a[index_2++];
+                t[index_t++] = array[index_2++];
                 continue;
             }
             if (index_2 > end) {
-                t[index_t++] = a[index_1++];
+                t[index_t++] = array[index_1++];
                 continue;
             }
-            if (a[index_2] > a[index_1]) {
-                t[index_t++] = a[index_1++];
+            if (array[index_2] > array[index_1]) {
+                t[index_t++] = array[index_1++];
                 continue;
             } else {
-                t[index_t++] = a[index_2++];
+                t[index_t++] = array[index_2++];
                 continue;
             }
         }
         for (int i = 0; i < end - begin + 1; i++) {
-            a[i + begin] = t[i];
+            array[i + begin] = t[i];
         }
         System.out.println(Arrays.toString(t));
     }
 
-    public static void sort(int start, int finish) {
+    private static void sort(int start, int finish) {
         System.out.println("Sort " + start + ".." + finish);
 
         if (start == finish) // выход из рекурсии - массив из 1 элемента отсортирован по определению
@@ -52,8 +52,8 @@ public class Merge {
     }
 
     public static void main(String args[]) {
-        System.out.println(Arrays.toString(a)); // до сортировки
-        sort(0, a.length - 1);               // сртировка
-        System.out.println(Arrays.toString(a)); // после сортировки
+        System.out.println(Arrays.toString(array)); // до сортировки
+        sort(0, array.length - 1);               // сртировка
+        System.out.println(Arrays.toString(array)); // после сортировки
     }
 }
