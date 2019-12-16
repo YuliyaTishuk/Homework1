@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//использование сортировок в классе
 public class SortingMethod {
     public static void main(String[] args) {
         int[] array = new int[args.length];
