@@ -1,5 +1,5 @@
 public class Shaker {
-    public static void shakersort (int [] array, int k, int l){
+    static void shakersort(int[] array, int k, int l){
 
         int left = 1;
         int right = array.length - 1;

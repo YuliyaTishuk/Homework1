@@ -1,5 +1,5 @@
 public class Merge {
-    public static void sort(int[] array) {
+    static void sort(int[] array) {
         sort(array, 0, array.length - 1);
     }
 

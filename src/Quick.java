@@ -1,6 +1,6 @@
 public class Quick {
 
-    public static int[] quickSort(int[] array, int start, int end) {
+    static int[] quickSort(int[] array, int start, int end) {
         if (start >= end) return array;
         int i = start;
         int j = end;

@@ -1,6 +1,6 @@
 public class Choice {
 
-    public void choiceSort(int[] array, int i, int i1) {
+    void choiceSort(int[] array, int i, int i1) {
         int min;
         for (int a = 0; a < array.length - 1; a++) {
             min = array[a];
