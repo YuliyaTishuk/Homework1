@@ -1,59 +1,59 @@
-import java.util.Arrays;
-
 public class Merge {
+    public static void sort(int[] array) {
+        sort(array, 0, array.length - 1);
+    }
 
-    public static int[] array = {19, 7, 6, 15, 2, 6, 2, 4, 8, 16};
+    private static void sort(int[] array, int start, int end) {
+        if (start < end) {
+            int middle = (start + end) / 2;
 
-    private static void merge(int begin, int end) {
-        int mid = (begin + end) / 2;
+            sort(array, start, middle);
+            sort(array, middle + 1, end);
 
-        int[] t = new int[end - begin + 1];
+            merge(array, start, middle, end);
+        }
+    }
 
-        int index_1 = begin;
+    private static void merge(int[] array, int start, int middle, int end) {
+        int leftMiddle = middle - start + 1;
+        int rightMiddle = end - middle;
 
-        int index_2 = mid + 1;
+        int[] leftArray = new int[leftMiddle];
+        int[] rightArray = new int[rightMiddle];
 
-        int index_t = 0;
+        for (int i = 0; i < leftMiddle; ++i) {
+            leftArray[i] = array[start + i];
+        }
+        for (int j = 0; j < rightMiddle; ++j) {
+            rightArray[j] = array[middle + 1 + j];
+        }
 
-        while ((index_1 <= mid) || (index_2 <= end)) {
-            if (index_1 > mid) {
-                t[index_t++] = array[index_2++];
-                continue;
-            }
-            if (index_2 > end) {
-                t[index_t++] = array[index_1++];
-                continue;
-            }
-            if (array[index_2] > array[index_1]) {
-                t[index_t++] = array[index_1++];
-                continue;
+        int i = 0, j = 0;
+
+        int k = start;
+        while (i < leftMiddle && j < rightMiddle) {
+            if (leftArray[i] <= rightArray[j]) {
+                array[k] = leftArray[i];
+                i++;
             } else {
-                t[index_t++] = array[index_2++];
-                continue;
+                array[k] = rightArray[j];
+                j++;
             }
+            k++;
         }
-        for (int i = 0; i < end - begin + 1; i++) {
-            array[i + begin] = t[i];
+
+        while (i < leftMiddle) {
+            array[k] = leftArray[i];
+            i++;
+            k++;
         }
-        System.out.println(Arrays.toString(t));
+
+        while (j < rightMiddle) {
+            array[k] = rightArray[j];
+            j++;
+            k++;
+        }
     }
 
-    private static void sort(int start, int finish) {
-        System.out.println("Sort " + start + ".." + finish);
-
-        if (start == finish) // выход из рекурсии - массив из 1 элемента отсортирован по определению
-            return;
-
-        int mid = (start + finish) / 2; //
-
-        sort(start  , mid);    // сортировка 1-й половины массива
-        sort(mid + 1, finish); // сортировка 2-й половины массива
-        merge(start, finish);
-    }
-
-    public static void main(String args[]) {
-        System.out.println(Arrays.toString(array)); // до сортировки
-        sort(0, array.length - 1);               // сртировка
-        System.out.println(Arrays.toString(array)); // после сортировки
-    }
 }
+
