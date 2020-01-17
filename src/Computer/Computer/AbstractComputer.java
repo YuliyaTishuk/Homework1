@@ -1,6 +1,9 @@
 package Computer;
 
+import Computer.Standart.CpuType;
+import Computer.Standart.HddType;
 import Computer.Standart.ISandart;
+import Computer.Standart.RamType;
 
 public abstract class AbstractComputer implements ISandart {
     protected abstract boolean supportsRam(RamType ramType);
