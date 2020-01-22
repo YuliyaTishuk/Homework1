@@ -1,16 +1,19 @@
 package FilterAplikator;
 
+import Pasport.Passport;
+
+import java.util.Date;
 import java.util.List;
 import java.util.ListIterator;
 
 public class ClassFiltr<T> {
-    public void filtr(List <T> element){
-        ListIterator iterator = element.listIterator();
+    public void filtr(List <Passport> passports){
+        ListIterator<?> iterator = passports.listIterator();
         while (iterator.hasNext()){
-//            if (element.getClass().equals(String){
-//                element.remove();
+            if (iterator.next()..equals(new Date()){
+                passports.remove();
             }
 
         }
     }
-//}
+}
