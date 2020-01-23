@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class ClassFiltr<T> {
-    public void filtr(List <Passport> passports){
+    public void filtr(List <?> passports){
         ListIterator<?> iterator = passports.listIterator();
         while (iterator.hasNext()){
-            if (iterator.next()..equals(new Date()){
-                passports.remove();
+//            if (iterator.next().fio.equals(this.fio){
+//                passports.remove();
             }
 
         }
     }
-}
+//}

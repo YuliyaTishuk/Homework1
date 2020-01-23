@@ -14,10 +14,10 @@ public class FilterApplikator<T> {
 
 //        }
 
-        public void sort(List<? extends Comparable> element){
-            return effectiveAt.comprareTo();
+//        public void sort(List<? extends Comparable> element){
+//            return effectiveAt.comprareTo();
 
-        }
+//        }
         public static void filter(List<Passport>passports, ClassFiltr filtr){
             return ;
         }
