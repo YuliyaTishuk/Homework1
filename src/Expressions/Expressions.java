@@ -8,7 +8,7 @@ public class Expressions {
         String str = "Я люблю JAVA";
         Pattern pattern = Pattern.compile("^[А-Я]{1}+ [а-я]{5}+ [A-Z]{4}$");
         Pattern pattern1 = Pattern.compile("^[А-Я]* [а-я]* [A-Z]*$]");
-        Pattern pattern2 = Pattern.compile("^[А-Я]? [а-я]{5} [A-Z]{4}]");
+        Pattern pattern2 = Pattern.compile("^[А-Я]? [а-я]? [A-Z]?]");
 //        Matcher matcher = pattern.matcher(str);
 //        Matcher matcher = pattern1.matcher(str);
         Matcher matcher = pattern2.matcher(str);
