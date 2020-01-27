@@ -7,9 +7,9 @@ public class ConsolerSaver implements ISaverChat {
 
     @Override
     public void save(Chat chat) {
-        List<Message> message = chat.getMessage();
+        List<? extends Message> message = chat.getMessage();
         for (Message messages:message){
-            System.out.println(message);
+           System.out.println(message);
         }
     }
 }

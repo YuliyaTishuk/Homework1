@@ -1,24 +1,28 @@
 package MyApplication;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Chat implements ISaverChat{
-    Set<User> users = new HashSet<>();
+    private  final Set<User> users = new HashSet<>();
+    private final List<Message> myMessage = new ArrayList();
+
     public void addMessage (Message message){
-        addMessage(message);
+        this.myMessage.add(message);
     }
     public void addMessage (Message[] messages){
-        addMessage(messages);
+        if(myMessage!=null){
+            for (Message message:messages){
+                this.myMessage.add(message);
+            }
+        }
     }
     public void addMessage(List<Message> message){
         addMessage(message);
     }
 
-    public void getMessage(){
+    public List<Message> getMessage(){
         getMessage();
+        return null;
     }
 
     @Override
@@ -39,7 +43,4 @@ public class Chat implements ISaverChat{
     public int hashCode() {
         return Objects.hash(users);
     }
-
-
-
 }

@@ -3,10 +3,14 @@ package MyApplication;
 import java.util.Date;
 
 public class Message <T> {
-    TypeMessage typeMessage;
+    private TypeMessage typeMessage;//вернуть тип
     private T data;
-    Date date = new Date();
-    User user;
+    private Date date = new Date();
+    private final User user;
+
+    public Message(User user) {//И еще один со всеми праметрами
+        this.user = user;
+    }
 
     public T getData() {
         return data;
@@ -18,9 +22,12 @@ public class Message <T> {
     public Date getDate() {
         return date;
     }
+
     public void  setDate(Date date){
         this.date = date;
     }
+
+
 
     @Override
     public String toString() {
