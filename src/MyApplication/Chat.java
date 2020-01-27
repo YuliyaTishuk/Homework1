@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class Chat implements ISaverChat{
+public class Chat{
     Set<User> users = new HashSet<>();
     public void addMessage (Message message){
         addMessage(message);
@@ -21,7 +21,6 @@ public class Chat implements ISaverChat{
         return;
     }
 
-    @Override
     public void save(ISaverChat saver) {
         saver.save(this);
     }
