@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class Chat{
+public class Chat implements ISaverChat{
     Set<User> users = new HashSet<>();
     public void addMessage (Message message){
         addMessage(message);
@@ -16,16 +16,18 @@ public class Chat{
     public void addMessage(List<Message> message){
         addMessage(message);
     }
+
     public void getMessage(){
         getMessage();
-        return;
-    }
-
-    public void save(ISaverChat saver) {
-        saver.save(this);
     }
 
     @Override
+    public void save(Chat saver) {
+        saver.save(this);
+    }
+
+
+     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -37,6 +39,7 @@ public class Chat{
     public int hashCode() {
         return Objects.hash(users);
     }
+
 
 
 }

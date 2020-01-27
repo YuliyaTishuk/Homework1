@@ -6,7 +6,7 @@ public class Message <T> {
     TypeMessage typeMessage;
     private T data;
     Date date = new Date();
-    //объект типа юзер
+    User user;
 
     public T getData() {
         return data;
