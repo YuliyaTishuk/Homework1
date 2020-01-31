@@ -1,8 +1,9 @@
 package MyApplication;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Chat implements ISaverChat{
+public class Chat implements ISaverChat, Serializable {
     private  final Set<User> users = new HashSet<>();
     private final List<Message> myMessage = new ArrayList();
 
@@ -17,7 +18,11 @@ public class Chat implements ISaverChat{
         }
     }
     public void addMessage(List<Message> message){
-        addMessage(message);
+        if (myMessage!=null){
+            for(Message message1:message){
+                this.myMessage.add(message1);
+            }
+        }
     }
 
     public List<Message> getMessage(){
@@ -43,4 +48,5 @@ public class Chat implements ISaverChat{
     public int hashCode() {
         return Objects.hash(users);
     }
-}
+
+  }

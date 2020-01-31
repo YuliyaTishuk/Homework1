@@ -1,8 +1,9 @@
 package MyApplication;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
     private final String id;
     private String fio;
     private String parol;
@@ -56,5 +57,8 @@ public class User {
                 ", fio='" + fio + '\'' +
                 ", parol='" + parol + '\'' +
                 '}';
+    }
+    public void writeObject(){
+
     }
 }
