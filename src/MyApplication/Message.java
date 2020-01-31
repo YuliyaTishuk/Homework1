@@ -1,5 +1,6 @@
 package MyApplication;
 
+import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class Message <T> {
@@ -10,6 +11,12 @@ public class Message <T> {
 
     public Message(User user) {//И еще один со всеми праметрами
         this.user = user;
+    }
+    public Message(User user, T data, Date date, TypeMessage typeMessage){
+        this.user = user;
+        this.data = data;
+        this.date = date;
+        this.typeMessage = typeMessage;
     }
 
     public T getData() {

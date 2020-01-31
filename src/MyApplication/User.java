@@ -1,7 +1,9 @@
 package MyApplication;
 
-import java.io.Serializable;
+import java.io.*;
+import java.nio.file.Path;
 import java.util.Objects;
+import java.util.UUID;
 
 public class User implements Serializable {
     private final String id;
@@ -58,7 +60,31 @@ public class User implements Serializable {
                 ", parol='" + parol + '\'' +
                 '}';
     }
-    public void writeObject(){
+
+    public String writeObject(String path) throws IOException {
+        String filename = path + "file" + UUID.randomUUID() + ".txt";
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
+            out.writeObject(this);
+            return filename;
+        }
+    }
+
+    public static User readFromFile(String filePath) throws IOException, ClassNotFoundException {
+        try(ObjectInputStream is = new ObjectInputStream(new FileInputStream(filePath))) {
+            return (User) is.readObject();
+        }
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        User object = new User("ab", "ab", "ab");
+
+        String file = object.writeObject("d:/");
+
+        User newUser = User.readFromFile(file);
+        System.out.println(newUser);
 
     }
+
 }
+
