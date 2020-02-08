@@ -4,30 +4,30 @@ import java.io.Serializable;
 import java.util.*;
 
 public class Chat implements ISaverChat, Serializable {
-    private  final Set<User> users = new HashSet<>();
-    private final List<Message> myMessage = new ArrayList();
+    private final Set<User> users = new HashSet<>();
+    private final List<Message> messages = new ArrayList<>();
 
-    public void addMessage (Message message){
-        this.myMessage.add(message);
-    }
-    public void addMessage (Message[] messages){
-        if(myMessage!=null){
-            for (Message message:messages){
-                this.myMessage.add(message);
-            }
-        }
-    }
-    public void addMessage(List<Message> message){
-        if (myMessage!=null){
-            for(Message message1:message){
-                this.myMessage.add(message1);
-            }
-        }
+    public void addMessage(Message message) {
+        this.messages.add(message);
     }
 
-    public List<Message> getMessage(){
-        getMessage();
-        return null;
+    public void addMessage(Message[] messages) {
+        this.messages.addAll(Arrays.asList(messages));
+    }
+
+    public void addMessage(List<Message> messages) {
+        this.messages.addAll(messages);
+    }
+
+    public List<Message> getMessage() {
+        return messages;
+    }
+
+    public static void main(String[] args) {
+        Chat chat = new Chat();
+        Chat chat2 = new Chat();
+
+        chat.save(chat2);
     }
 
     @Override
@@ -35,8 +35,7 @@ public class Chat implements ISaverChat, Serializable {
         saver.save(this);
     }
 
-
-     @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -49,4 +48,4 @@ public class Chat implements ISaverChat, Serializable {
         return Objects.hash(users);
     }
 
-  }
+}

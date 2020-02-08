@@ -10,8 +10,7 @@ public class User2 {
         User n = new User("234@rty", "Филимонов Иван", "12345");
         user.add(n);
         Chat chat = new Chat();
-        Message <User> message = new Message<User>(n);
-        message.getData();
+
 
 
 

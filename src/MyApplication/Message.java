@@ -1,47 +1,52 @@
 package MyApplication;
 
-import javax.xml.crypto.Data;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.StringJoiner;
 
-public class Message <T> {
-    private TypeMessage typeMessage;//вернуть тип
-    private T data;
-    private Date date = new Date();
+public class Message {
+    private final MessagePayload data;
+    private final LocalDateTime date;
     private final User user;
 
-    public Message(User user) {//И еще один со всеми праметрами
-        this.user = user;
+    public Message(User user,MessagePayload data) {//И еще один со всеми праметрами
+        this(user, data, LocalDateTime.now());
     }
-    public Message(User user, T data, Date date, TypeMessage typeMessage){
+
+    public Message(User user, MessagePayload data, LocalDateTime date) {
         this.user = user;
         this.data = data;
         this.date = date;
-        this.typeMessage = typeMessage;
     }
 
-    public T getData() {
+    public MessagePayload getData() {
         return data;
     }
-    public void setData(T data){
-        this.data =  data;
-    }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void  setDate(Date date){
-        this.date = date;
+    public User getUser() {
+        return user;
     }
-
-
 
     @Override
     public String toString() {
-        return "Message{" +
-                "typeMessage=" + typeMessage +
-                ", data=" + data +
-                ", date=" + date +
-                '}';
+        return new StringJoiner(", ", Message.class.getSimpleName() + "[", "]")
+                .add("data=" + data)
+                .add("date=" + date)
+                .add("user=" + user)
+                .toString();
+    }
+}
+
+interface MessagePayload {
+    MessageType getType();
+}
+class TextPayload implements MessagePayload {
+
+    @Override
+    public MessageType getType() {
+        return MessageType.TEXT;
     }
 }

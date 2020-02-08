@@ -75,8 +75,7 @@ public class User implements Serializable {
             return (User) is.readObject();
         }
     }
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+     public static void main(String[] args) throws IOException, ClassNotFoundException {
         User object = new User("ab", "ab", "ab");
 
         String file = object.writeObject("d:/");

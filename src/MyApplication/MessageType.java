@@ -1,6 +1,6 @@
 package MyApplication;
 
-public enum TypeMessage {
+public enum MessageType {
     TEXT,
     FOTO,
     VIDEO,
