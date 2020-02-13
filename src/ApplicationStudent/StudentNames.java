@@ -48,8 +48,5 @@ public class StudentNames {
     private static String randomElement(List<String> list) {
         return list.get(random.nextInt(list.size()));
     }
-    private static String generateRandomStudentGrade (List<String> studentGrade){
-        String grade = randomElement(studentGrade);
-        return grade;
-    }
+
 }

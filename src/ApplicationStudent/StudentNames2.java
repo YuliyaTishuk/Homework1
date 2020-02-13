@@ -1,6 +1,5 @@
 package ApplicationStudent;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,7 +18,7 @@ public class StudentNames2 {
     private static List<String> femaleLastNames = Arrays.asList("Иванова", "Петрова", "Сидорова", "Морозова", "Волкова", "Лебедева", "Степанова", "Николаева", "Кузнецова", "Смирнова");
     private static List<String> femaleNames = Arrays.asList("Мария", "Вера", "Елена", "Ксения", "Агата", "Василиса", "Марина", "Нина", "Оксана", "Светлана");
     private static List<String> femalePatronymics = Arrays.asList("Ивановна", "Петровна", "Васильевна", "Марковна", "Юрьевна", "Денисовна", "Богдановна", "Валентиновна", "Фёдоровна", "Кондратьевна");
-    private static List<String> studentGrade = Arrays.asList("0","1","2","3","4","5","6","7","8","9","10");
+    private static List<String> studentGrade = Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
     private static Random random = new SecureRandom();
 
@@ -40,7 +39,7 @@ public class StudentNames2 {
         }
     }
 
-    private static String generateRandomName(List<String> lastNames, List<String> names, List<String> patronymics, List<String> studentGrade) {
+    private static String generateRandomName(List<String> lastNames, List<String> names, List<String> patronymics, List<String>studentGrade) {
         String lastName = randomElement(lastNames);
         String name = randomElement(names);
         String patronymic = randomElement(patronymics);
@@ -51,4 +50,5 @@ public class StudentNames2 {
     private static String randomElement(List<String> list) {
         return list.get(random.nextInt(list.size()));
     }
+
 }
