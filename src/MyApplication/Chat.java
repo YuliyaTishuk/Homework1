@@ -23,13 +23,6 @@ public class Chat implements ISaverChat, Serializable {
         return messages;
     }
 
-    public static void main(String[] args) {
-        Chat chat = new Chat();
-        Chat chat2 = new Chat();
-
-        chat.save(chat2);
-    }
-
     @Override
     public void save(Chat saver) {
         saver.save(this);
