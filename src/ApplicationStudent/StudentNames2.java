@@ -52,12 +52,21 @@ public class StudentNames2 {
     private static String randomElement(List<String> list) {
         return list.get(random.nextInt(list.size()));
     }
-    public class GradeComprator implements Comparator<StudentNames2>{
+    //public class GradeComprator implements Comparator<GradeComprator.StudentsGrade>{
+        //@Override
+        //public int compare(StudentsGrade o1, StudentsGrade o2) {
+            //return o1.getGrade().compareTo(o2.getGrade());
+        //}
 
-        @Override
-        public int compare(StudentNames2 o1, StudentNames2 o2) {
-            return o1.getGrade().compareTo(o2.getGrade());
-        }
-    }
+        //class StudentsGrade{
+            //private String grade;
+            //public StudentsGrade(String grade){
+                //this.grade = grade;
+            //}
+            //public String getGrade(){
+                //return grade;
+            //}
+        //}
+    //}
 
 }
