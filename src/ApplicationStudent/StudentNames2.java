@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -24,6 +25,7 @@ public class StudentNames2 {
 
     public static void main(String[] args) throws IOException {
         String students = Stream.generate(StudentNames2::generateRandomFullName).limit(100)
+                .sorted()
                 .collect(Collectors.joining("\r\n"));
 
         Files.writeString(Paths.get("d:/studentsList.txt"), students, StandardOpenOption.CREATE);
@@ -33,13 +35,13 @@ public class StudentNames2 {
     private static String generateRandomFullName() {
         boolean isMale = random.nextBoolean();
         if (isMale) {
-            return generateRandomName(maleLastNames, maleNames, malePatronymics,studentGrade);
+            return generateRandomName(maleLastNames, maleNames, malePatronymics, studentGrade);
         } else {
             return generateRandomName(femaleLastNames, femaleNames, femalePatronymics, studentGrade);
         }
     }
 
-    private static String generateRandomName(List<String> lastNames, List<String> names, List<String> patronymics, List<String>studentGrade) {
+    private static String generateRandomName(List<String> lastNames, List<String> names, List<String> patronymics, List<String> studentGrade) {
         String lastName = randomElement(lastNames);
         String name = randomElement(names);
         String patronymic = randomElement(patronymics);
@@ -49,6 +51,13 @@ public class StudentNames2 {
 
     private static String randomElement(List<String> list) {
         return list.get(random.nextInt(list.size()));
+    }
+    public class GradeComprator implements Comparator<StudentNames2>{
+
+        @Override
+        public int compare(StudentNames2 o1, StudentNames2 o2) {
+            return o1.getGrade().compareTo(o2.getGrade());
+        }
     }
 
 }
