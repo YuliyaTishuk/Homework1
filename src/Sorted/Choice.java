@@ -1,3 +1,5 @@
+package Sorted;
+
 public class Choice {
 
     void choiceSort(int[] array, int i, int i1) {

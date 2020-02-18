@@ -1,3 +1,5 @@
+package Sorted;
+
 public class Merge {
     static void sort(int[] array) {
         sort(array, 0, array.length - 1);

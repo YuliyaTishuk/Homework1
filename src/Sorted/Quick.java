@@ -1,3 +1,5 @@
+package Sorted;
+
 public class Quick {
 
     static int[] quickSort(int[] array, int start, int end) {

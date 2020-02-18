@@ -1,3 +1,7 @@
+package Sorted;
+
+import Sorted.Bubble;
+
 import java.util.Arrays;
 //использование сортировок в классе
 public class SortingMethod {

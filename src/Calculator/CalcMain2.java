@@ -1,3 +1,5 @@
+package Calculator;
+
 import java.util.Scanner;
 
 class CalcMain2 {
