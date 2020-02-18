@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 //вычисление НОД и НОК двух чисел a и b
-public class GsdLcm {
+public class NodAndNok {
     private static int gcd(int a, int b) {
         while (b !=0) {
             int tmp = a%b;

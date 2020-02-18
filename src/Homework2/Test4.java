@@ -1,3 +1,5 @@
+package Homework2;
+
 import java.util.Scanner;
 //Перемножение цифр  числа между собой
 public class Test4 {

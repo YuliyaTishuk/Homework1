@@ -1,3 +1,5 @@
+package MotherWasWashing;
+
 public class MamaMalaRam {
     public static void main(String[] args) {
         String firstString = "Мама мыла раму";
