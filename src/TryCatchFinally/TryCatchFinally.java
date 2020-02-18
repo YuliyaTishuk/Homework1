@@ -6,11 +6,10 @@ public class TryCatchFinally {
         try {
             result = a / b;
             System.out.println("Ваш ответ " + result);
-        } catch (ArithmeticException d) {
-            System.out.println(d);
-            System.out.println("На ноль делить нельзя!");
+        } catch (Exception byZero) {
+            System.err.println("Ошибка: " + byZero.getMessage());
         }finally {
-            System.out.println("Блок finally");
+            System.out.println("Запомните, на ноль делить нельзя!(по крайней мере в этой программе)");
         }
         return result;
     }

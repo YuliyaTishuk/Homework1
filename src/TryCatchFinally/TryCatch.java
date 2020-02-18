@@ -7,7 +7,7 @@ public class TryCatch {
             result = a / b;
             System.out.println("Ваш ответ " + result);
         } catch (Exception byZero) {
-            System.out.println("Ошибка: " + byZero.getMessage());
+            System.err.println("Ошибка: " + byZero.getMessage());
         }
         return result;
     }
